@@ -1,0 +1,42 @@
+.\" @project      The CERN Tape Archive (CTA)
+.\" @copyright    Copyright © 2016-2022 CERN
+.\" @license      This program is free software, distributed under the terms of the GNU General Public
+.\"               Licence version 3 (GPL Version 3), copied verbatim in the file "COPYING". You can
+.\"               redistribute it and/or modify it under the terms of the GPL Version 3, or (at your
+.\"               option) any later version.
+.\"
+.\"               This program is distributed in the hope that it will be useful, but WITHOUT ANY
+.\"               WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+.\"               PARTICULAR PURPOSE. See the GNU General Public License for more details.
+.\"
+.\"               In applying this licence, CERN does not waive the privileges and immunities
+.\"               granted to it by virtue of its status as an Intergovernmental Organization or
+.\"               submit itself to any jurisdiction.
+
+.TH CTA-DATABASE-POLL 1CTA "December 2016" CTA CTA
+.SH NAME
+cta-database-poll \- Polls the specified database every second
+.SH SYNOPSIS
+.BI "cta-database-poll databaseConnectionFile numberOfSecondsToKeepPolling [options]"
+.SH DESCRIPTION
+\fBcta-database-poll\fP is a command-line tool that polls the specified database
+every second for the specified total number of seconds.
+.SH ARGUMENTS
+.TP
+\fBdatabaseConnectionFile
+The path to the configuration file containing the connection details of the
+CTA catalogue database.
+.TP
+\fBnumberOfSecondsToKeepPolling
+The total number of seconds cta-database-poll should run before exiting.
+.SH OPTIONS
+.TP
+\fB\-h, \-\-help
+Prints the usage message.
+.SH RETURN VALUE
+Zero on success and non-zero on failure.
+.SH EXAMPLES
+cta-database-poll 5 /etc/cta/cta-catalogue.conf
+
+.SH AUTHOR
+\fBCTA\fP Team
